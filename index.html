@@ -61,10 +61,10 @@
 
       function ModalShell({ title, onClose, children }) {
         return (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
-            <div className="glass w-full max-w-2xl rounded-2xl border border-zinc-200 bg-white/95 p-6 shadow-soft transition-all dark:border-zinc-700 dark:bg-zinc-900/95 dark:shadow-softDark">
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
+          <div className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-black/50 p-0 sm:items-center sm:p-4">
+            <div className="glass flex h-[92dvh] w-full flex-col rounded-t-3xl border border-zinc-200 bg-white/95 shadow-soft transition-all sm:h-auto sm:max-h-[88dvh] sm:max-w-2xl sm:rounded-2xl dark:border-zinc-700 dark:bg-zinc-900/95 dark:shadow-softDark">
+              <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-4 sm:px-6 dark:border-zinc-700">
+                <h2 className="text-lg font-semibold tracking-tight sm:text-xl">{title}</h2>
                 <button
                   onClick={onClose}
                   className="rounded-lg border border-zinc-200 px-3 py-1.5 text-sm transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
@@ -72,7 +72,7 @@
                   Close
                 </button>
               </div>
-              {children}
+              <div className="flex-1 overflow-y-auto px-4 py-4 sm:px-6 sm:py-5">{children}</div>
             </div>
           </div>
         );
